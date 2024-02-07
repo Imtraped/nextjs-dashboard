@@ -6,6 +6,12 @@ import { fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import { LatestInvoicesSkeleton, RevenueChartSkeleton, CardSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Your Dashboard',
+  description: 'The official Next.js Course Dashboard, built with App Router.',
+};
 
 export default  async function Page() {
     const {numberOfInvoices, numberOfCustomers, totalPaidInvoices, totalPendingInvoices} = await fetchCardData();
